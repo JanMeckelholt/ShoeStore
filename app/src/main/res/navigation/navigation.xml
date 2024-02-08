@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginScreen">
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.udacity.shoestore.screens.login.LoginScreen"
+        android:label="fragment_login_screen"
+        tools:layout="@layout/fragment_login_screen" >
+        <action
+            android:id="@+id/action_loginScreen_to_welcomeScreen"
+            app:destination="@id/welcomeScreen"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeScreen"
+        android:name="com.udacity.shoestore.screens.welcome.WelcomeScreen"
+        android:label="fragment_welcome_screen"
+        tools:layout="@layout/fragment_welcome_screen" >
+        <action
+            android:id="@+id/action_welcomeScreen_to_instructionsScreen"
+            app:destination="@id/instructionsScreen" />
+        <argument
+            android:name="user"
+            app:argType="com.udacity.shoestore.models.User"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionsScreen"
+        android:name="com.udacity.shoestore.screens.instructions.InstructionsScreen"
+        android:label="fragment_instructions_screen"
+        tools:layout="@layout/fragment_instructions_screen" >
+        <action
+            android:id="@+id/action_instructionsScreen_to_shoeListingScreen"
+            app:destination="@id/shoeListingScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeListingScreen"
+        android:name="com.udacity.shoestore.screens.shoelisting.ShoeListingScreen"
+        android:label="fragment_shoe_listing_screen"
+        tools:layout="@layout/fragment_shoe_listing_screen" >
+        <action
+            android:id="@+id/action_shoeListingScreen_to_shoeDetailScreen2"
+            app:destination="@id/shoeDetailScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailScreen"
+        android:name="com.udacity.shoestore.screens.shoedetail.ShoeDetailScreen"
+        android:label="fragment_shoe_detail_screen"
+        tools:layout="@layout/fragment_shoe_detail_screen" >
+        <argument
+            android:name="shoe"
+            app:argType="com.udacity.shoestore.models.Shoe"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+</navigation>
