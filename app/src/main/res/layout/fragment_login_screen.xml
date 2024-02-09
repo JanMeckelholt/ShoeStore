@@ -8,20 +8,32 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".screens.login.LoginScreen">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_standard"
             android:orientation="horizontal">
+            <TextView
+                style="@style/styleTv"
+                android:text="Name:" />
 
+            <EditText
+                android:id="@+id/etName"
+                style="@style/styleEt" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:orientation="horizontal">
             <TextView
                 style="@style/styleTv"
                 android:text="E-Mail:" />
 
             <EditText
                 android:id="@+id/etEmail"
-                style="@style/styleEt" />
+                style="@style/styleEt"
+                android:inputType="textEmailAddress"/>
         </LinearLayout>
 
         <LinearLayout
@@ -36,7 +48,8 @@
 
             <EditText
                 android:id="@+id/etPassword"
-                style="@style/styleEt" />
+                style="@style/styleEt"
+                android:inputType="textPassword"/>
         </LinearLayout>
 
         <LinearLayout

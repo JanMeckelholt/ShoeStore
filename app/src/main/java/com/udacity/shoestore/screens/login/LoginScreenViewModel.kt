@@ -1,21 +1,23 @@
 package com.udacity.shoestore.screens.login
 
-import android.content.Intent
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.User
-import com.udacity.shoestore.screens.welcome.WelcomeScreen
 import timber.log.Timber
 
 class LoginScreenViewModel : ViewModel() {
-    fun login(email : String, password : String) : User? {
-        Timber.i("user: email $email, password: $password")
-        if (loginDataPlausible(email, password)) {
+
+    var user = MutableLiveData<User>()
+    fun login(name: String, email : String, password : String) :Boolean {
+        Timber.i("user $name: email $email, password: $password")
+        if (loginDataPlausible(name, email, password)) {
             Timber.i("creating user...")
-            return User(email = email, password = password)
+            user = MutableLiveData(User(name= name, email=email, password = password))
+            return true
         }
-        return null
+        return false
     }
-    private fun loginDataPlausible(email : String, password : String) : Boolean {
-        return (email.length > 2 && email.contains("@") && password.length > 2)
+    private fun loginDataPlausible(name: String, email : String, password : String) : Boolean {
+        return (name.length > 2 &&email.length > 2 && email.contains("@") && password.length > 2)
     }
 }

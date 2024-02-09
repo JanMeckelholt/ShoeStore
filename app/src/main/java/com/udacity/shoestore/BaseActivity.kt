@@ -12,4 +12,5 @@ open class BaseActivity :AppCompatActivity() {
         snackBarView.setBackgroundColor(ContextCompat.getColor(this, R.color.errorColor))
         snackBar.show()
     }
+
 }

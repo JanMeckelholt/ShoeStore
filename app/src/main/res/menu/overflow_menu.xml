@@ -4,5 +4,7 @@
 
     <item
         android:id="@+id/instructionsScreen"
-        android:title="Instuctions" />
+        android:title="@string/menu_item_instructions"
+        android:orderInCategory="1"
+        app:showAsAction="never"/>
 </menu>

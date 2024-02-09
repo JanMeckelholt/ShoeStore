@@ -2,4 +2,11 @@
     <string name="app_name">ShoeStore</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_headline">Welcome!</string>
+    <string name="instructions_headline">This shoe store lists all our shoes!</string>
+    <string name="instructions_body">We offer small shoes, normal shoes, big shoes.\nAlso have a look at our special offer sections\nEnjoy!!!</string>
+    <string name="welcome_body">You came to the right place.\nHappy to have you here!</string>
+    <string name="btn_to_instructions">Show me how it works</string>
+    <string name="btn_to_shoe_list">Take me to the Shoe List</string>
+    <string name="menu_item_instructions">Instructions</string>
 </resources>

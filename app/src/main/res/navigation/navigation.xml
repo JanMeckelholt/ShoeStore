@@ -43,7 +43,7 @@
         android:label="fragment_shoe_listing_screen"
         tools:layout="@layout/fragment_shoe_listing_screen" >
         <action
-            android:id="@+id/action_shoeListingScreen_to_shoeDetailScreen2"
+            android:id="@+id/action_shoeListingScreen_to_shoeDetailScreen"
             app:destination="@id/shoeDetailScreen" />
     </fragment>
     <fragment
