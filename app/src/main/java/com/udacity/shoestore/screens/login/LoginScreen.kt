@@ -36,7 +36,6 @@ class LoginScreen : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         Timber.i("onActivityCreated")
-        handleViewCreated()
     }
 
 

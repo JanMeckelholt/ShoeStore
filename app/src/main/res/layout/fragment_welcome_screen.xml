@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".screens.welcome.WelcomeScreen">
+    <androidx.cardview.widget.CardView
+        style="@style/cv_style"
+        app:cardCornerRadius="@dimen/cv_corner_radius">
 
-        <TextView
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_standard"
-            android:text="@string/welcome_headline"
-            android:textSize="@dimen/textSizeHeadline"
-            android:textStyle="bold" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/cv_padding"
+            tools:context=".screens.welcome.WelcomeScreen">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_standard"
-            android:text="@string/welcome_body"
-            android:textSize="@dimen/textSizeValue" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:text="@string/welcome_headline"
+                android:textSize="@dimen/textSizeHeadline"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnToInstructions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_btn"
-            android:layout_marginTop="@dimen/margin_standard"
-            android:text="@string/btn_to_instructions" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:text="@string/welcome_body"
+                android:textSize="@dimen/textSizeValue" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btnToInstructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/btn_margin"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:text="@string/btn_to_instructions" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

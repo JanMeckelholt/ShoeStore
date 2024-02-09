@@ -8,5 +8,6 @@
     <string name="welcome_body">You came to the right place.\nHappy to have you here!</string>
     <string name="btn_to_instructions">Show me how it works</string>
     <string name="btn_to_shoe_list">Take me to the Shoe List</string>
+    <string name="btn_to_shoe_detail">Add a new shoe</string>
     <string name="menu_item_instructions">Instructions</string>
 </resources>

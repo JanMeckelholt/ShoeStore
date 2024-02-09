@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margin_standard">20dp</dimen>
-    <dimen name="margin_btn">20dp</dimen>
+    <dimen name="standard_margin">20dp</dimen>
+    <dimen name="standard_padding">20dp</dimen>
+    <dimen name="cv_margin">20dp</dimen>
+    <dimen name="cv_padding">20dp</dimen>
+    <dimen name="cv_corner_radius">10dp</dimen>
+    <dimen name="btn_margin">20dp</dimen>
     <dimen name="textSizeLabel">16sp</dimen>
     <dimen name="textSizeValue">20sp</dimen>
+    <dimen name="textSizeCardView">20sp</dimen>
     <dimen name="textSizeHeadline">28sp</dimen>
 
 </resources>

@@ -36,7 +36,6 @@ class InstructionsScreen : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         Timber.i("onActivityCreated")
-        handleViewCreated()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
