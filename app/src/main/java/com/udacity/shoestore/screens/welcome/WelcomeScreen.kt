@@ -41,20 +41,16 @@ class WelcomeScreen : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         Timber.i("onActivityCreated")
-        handleViewCreated()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Timber.i("onViewCreated")
-        handleViewCreated()
-    }
-
-    private fun handleViewCreated() {
         viewModel = ViewModelProvider(this).get(WelcomeScreenViewModel::class.java)
         binding.btnToInstructions.setOnClickListener {
             findNavController().navigate(R.id.action_welcomeScreen_to_instructionsScreen)
         }
-
     }
+
+
 }

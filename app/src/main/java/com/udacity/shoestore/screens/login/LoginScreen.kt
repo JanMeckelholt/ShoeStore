@@ -29,6 +29,8 @@ class LoginScreen : Fragment() {
     ): View? {
         _binding = FragmentLoginScreenBinding.inflate(inflater, container, false)
         val view = binding.root
+        setHasOptionsMenu(false);
+
         return view
     }
 
@@ -42,16 +44,6 @@ class LoginScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Timber.i("onViewCreated")
-        handleViewCreated()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    private fun handleViewCreated() {
-
         viewModel = ViewModelProvider(this).get(LoginScreenViewModel::class.java)
         binding.btnLogin.setOnClickListener {
             toWelcomeScreen()
@@ -61,11 +53,16 @@ class LoginScreen : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     private fun toWelcomeScreen() {
         activity?.let { hideKeyboard(it) }
         if (!viewModel.login(binding.etName.text.toString(), binding.etEmail.text.toString(), binding.etPassword.text.toString()))
         {
-            (activity as? BaseActivity)?.showErrorSnackBar("Password or Email not correct!")
+            (activity as? BaseActivity)?.showErrorSnackBar(resources.getString(R.string.signup_error_text))
         }
         viewModel.user.observe(viewLifecycleOwner, Observer { user ->
             if (user != null) {
@@ -75,7 +72,7 @@ class LoginScreen : Fragment() {
                 findNavController().navigate(R.id.action_loginScreen_to_welcomeScreen, bundle)
             } else {
                 Timber.e("user null!!")
-                (activity as? BaseActivity)?.showErrorSnackBar("Password or Email not correct!")
+                (activity as? BaseActivity)?.showErrorSnackBar(resources.getString(R.string.signup_error_text))
             }
         })
 

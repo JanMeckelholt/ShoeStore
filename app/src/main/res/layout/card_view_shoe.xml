@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/cv_style"
     app:cardCornerRadius="@dimen/cv_corner_radius"
-    tools:showIn="@layout/fragment_shoe_listing_screen"
-    style="@style/cv_style">
+    android:theme="@style/Theme.MaterialComponents.Bridge"
+    tools:showIn="@layout/fragment_shoe_listing_screen">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/cv_padding"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/cv_padding">
 
         <TextView
             android:id="@+id/tvShoeName"
@@ -34,11 +35,48 @@
 
             tools:text="shoe descriptions" />
 
-        <ImageView
-            android:id="@+id/ivShoe"
-
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="@dimen/cv_margin">
+            <com.google.android.material.button.MaterialButton
+                android:layout_gravity="center_vertical"
+                app:backgroundTint="@color/ligthGray"
+                android:id="@+id/btnPrev"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/baseline_navigate_before_24"
+                android:layout_marginRight="10dp"
+                />
+            <ImageView
+                android:clipToOutline="true"
+                android:layout_marginTop="30dp"
+                android:id="@+id/ivShoe"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_gravity="center_vertical"
+                app:backgroundTint="@color/ligthGray"
+                android:id="@+id/btnNext"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/baseline_navigate_next_24"
+                android:layout_marginLeft="10dp"
+                />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:id="@+id/btnDeleteShoe"
+            android:backgroundTint="@color/errorColor"
+            android:text="@string/delete_shoe"
+            />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

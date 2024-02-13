@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ShoeStore</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome_headline">Welcome!</string>
     <string name="instructions_headline">This shoe store lists all our shoes!</string>
@@ -9,5 +8,7 @@
     <string name="btn_to_instructions">Show me how it works</string>
     <string name="btn_to_shoe_list">Take me to the Shoe List</string>
     <string name="btn_to_shoe_detail">Add a new shoe</string>
-    <string name="menu_item_instructions">Instructions</string>
+    <string name="menu_item_logout">Log out</string>
+    <string name="signup_error_text">"Input has to be at lest 3 characters long!\nE-Mail has to contain @-Symbol!"</string>
+    <string name="delete_shoe">Delete Shoe</string>
 </resources>

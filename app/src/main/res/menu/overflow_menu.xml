@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/instructionsScreen"
-        android:title="@string/menu_item_instructions"
+        android:id="@+id/loginScreen"
+        android:title="@string/menu_item_logout"
         android:orderInCategory="1"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 </menu>

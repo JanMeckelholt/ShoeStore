@@ -12,8 +12,6 @@ import com.udacity.shoestore.databinding.FragmentInstructionsScreenBinding
 import timber.log.Timber
 
 class InstructionsScreen : Fragment() {
-
-    private lateinit var viewModel: InstructionsScreenViewModel
     private var _binding: FragmentInstructionsScreenBinding? = null
     private val binding get() = _binding!!
 
@@ -41,15 +39,9 @@ class InstructionsScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Timber.i("onViewCreated")
-        handleViewCreated()
-    }
-
-    private fun handleViewCreated() {
-        viewModel = ViewModelProvider(this).get(InstructionsScreenViewModel::class.java)
         binding.btnToShoeList.setOnClickListener {
             findNavController().navigate(R.id.action_instructionsScreen_to_shoeListingScreen)
         }
-
     }
 
 }
