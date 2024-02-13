@@ -29,7 +29,6 @@ class ShoeAdapter(private val shoes: List<Shoe>, private val ctx: Context, priva
         val btnDeleteShoe : Button
         var currentImageIndex: Int
 
-
         init {
             // Define click listener for the ViewHolder's View
             tvShoeName = view.findViewById(R.id.tvShoeName)
@@ -45,17 +44,14 @@ class ShoeAdapter(private val shoes: List<Shoe>, private val ctx: Context, priva
         }
     }
 
-    // Create new views (invoked by the layout manager)
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         Timber.i("shoeAdapter viewHolder created")
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.card_view_shoe, viewGroup, false)
-
-
         return ViewHolder(view)
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         viewHolder.btnDeleteShoe.setOnClickListener {
             Timber.i("shoes: $shoes")

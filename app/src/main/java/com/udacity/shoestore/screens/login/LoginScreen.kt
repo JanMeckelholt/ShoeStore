@@ -2,7 +2,6 @@ package com.udacity.shoestore.screens.login
 
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,21 +28,17 @@ class LoginScreen : Fragment() {
     ): View? {
         _binding = FragmentLoginScreenBinding.inflate(inflater, container, false)
         val view = binding.root
-        setHasOptionsMenu(false);
-
         return view
     }
 
     @Deprecated("'onActivityCreated(Bundle?): Unit' is deprecated.")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        Timber.i("onActivityCreated")
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Timber.i("onViewCreated")
         viewModel = ViewModelProvider(this).get(LoginScreenViewModel::class.java)
         binding.btnLogin.setOnClickListener {
             toWelcomeScreen()

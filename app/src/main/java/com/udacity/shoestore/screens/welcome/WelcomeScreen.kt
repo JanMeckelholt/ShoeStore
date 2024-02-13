@@ -1,6 +1,5 @@
 package com.udacity.shoestore.screens.welcome
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,7 +14,6 @@ import timber.log.Timber
 
 class WelcomeScreen : Fragment() {
 
-    private lateinit var viewModel: WelcomeScreenViewModel
     private var _binding: FragmentWelcomeScreenBinding? = null
     private val binding get() = _binding!!
 
@@ -46,7 +44,6 @@ class WelcomeScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Timber.i("onViewCreated")
-        viewModel = ViewModelProvider(this).get(WelcomeScreenViewModel::class.java)
         binding.btnToInstructions.setOnClickListener {
             findNavController().navigate(R.id.action_welcomeScreen_to_instructionsScreen)
         }
