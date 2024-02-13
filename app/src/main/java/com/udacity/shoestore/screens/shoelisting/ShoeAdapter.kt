@@ -129,7 +129,7 @@ class ShoeAdapter(private val shoes: List<Shoe>, private val ctx: Context, priva
 
     override fun getItemCount() = shoes.size
 
-
+    //adapted from https://stackoverflow.com/questions/22664938/get-drawable-by-string
     fun GetImage(c: Context, ImageName: String?): Drawable? {
         return c.resources.getDrawable(
             c.resources.getIdentifier(

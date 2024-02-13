@@ -35,6 +35,7 @@ class ShoeListingScreen : Fragment(), MenuProvider {
     ): View? {
         _binding = FragmentShoeListingScreenBinding.inflate(inflater, container, false)
         val view = binding.root
+        //adapted from: https://stackoverflow.com/questions/73281088/how-to-add-items-to-the-menu-bar-using-the-new-menuprovider
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
         return view

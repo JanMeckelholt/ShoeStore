@@ -32,6 +32,7 @@ open class BaseActivity : AppCompatActivity() {
             this.doubleBackToExitPressedOnce = true
             Toast.makeText(this, "Click BACK again to exit the App", Toast.LENGTH_SHORT).show()
 
+            //adapted from: https://stackoverflow.com/questions/8430805/clicking-the-back-button-twice-to-exit-an-activity
             Handler(Looper.getMainLooper()).postDelayed(Runnable {
                 doubleBackToExitPressedOnce = false
             }, 2000)
