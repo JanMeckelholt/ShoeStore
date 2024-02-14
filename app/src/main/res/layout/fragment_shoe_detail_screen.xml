@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+
     <androidx.cardview.widget.CardView
         style="@style/cv_style"
         app:cardCornerRadius="@dimen/cv_corner_radius">
@@ -26,7 +32,8 @@
 
                 <EditText
                     android:id="@+id/etName"
-                    style="@style/styleEt" />
+                    style="@style/styleEt"
+                    android:text="@={shoe.name}"/>
             </LinearLayout>
 
             <LinearLayout
@@ -42,7 +49,8 @@
                 <EditText
                     android:id="@+id/etSize"
                     style="@style/styleEt"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"
+                    android:text="@={`` + shoe.size}"/>
             </LinearLayout>
 
             <LinearLayout
@@ -57,7 +65,8 @@
 
                 <EditText
                     android:id="@+id/etCompany"
-                    style="@style/styleEt"/>
+                    style="@style/styleEt"
+                    android:text="@={shoe.company}"/>
             </LinearLayout>
 
             <LinearLayout
@@ -72,7 +81,8 @@
 
                 <EditText
                     android:id="@+id/etDesc"
-                    style="@style/styleEt"/>
+                    style="@style/styleEt"
+                    android:text="@={shoe.description}"/>
             </LinearLayout>
 
             <LinearLayout
