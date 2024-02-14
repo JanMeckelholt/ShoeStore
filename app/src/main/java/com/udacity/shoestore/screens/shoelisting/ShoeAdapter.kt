@@ -56,6 +56,7 @@ class ShoeAdapter(private val shoes: List<Shoe>, private val ctx: Context, priva
         viewHolder.btnDeleteShoe.setOnClickListener {
             Timber.i("shoes: $shoes")
             shoeListingScreenViewModel.deleteShoe(position)
+            viewHolder.currentImageIndex = 0
             notifyDataSetChanged()
             Timber.i("removed postion: $position")
             Timber.i("shoes: $shoes")
