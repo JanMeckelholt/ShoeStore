@@ -12,97 +12,141 @@
     <androidx.cardview.widget.CardView
         style="@style/cv_style"
         app:cardCornerRadius="@dimen/cv_corner_radius">
-
-        <LinearLayout
+        <!-- LinearLayout would have been nested, therefore a ConstraintLayout was chosen to increase performance -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/cv_padding"
-            android:orientation="vertical"
             tools:context=".screens.shoedetail.ShoeDetailScreen">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/styleTv"
+                android:layout_width="0dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="61dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="20dp"
+                android:text="Name:"
+                app:layout_constraintBottom_toTopOf="@+id/tvSize"
+                app:layout_constraintEnd_toStartOf="@+id/etName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etName"
+                style="@style/styleEt"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/standard_margin"
-                android:orientation="horizontal">
+                android:text="@={shoe.name}"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvName"
+                app:layout_constraintTop_toTopOf="@+id/tvName" />
 
-                <TextView
-                    style="@style/styleTv"
-                    android:text="Name:" />
 
-                <EditText
-                    android:id="@+id/etName"
-                    style="@style/styleEt"
-                    android:text="@={shoe.name}"/>
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tvSize"
+                style="@style/styleTv"
+                android:layout_width="0dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="20dp"
+                android:text="Size:"
+                app:layout_constraintBottom_toTopOf="@+id/tvCompany"
+                app:layout_constraintEnd_toStartOf="@+id/etSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/etSize"
+                style="@style/styleEt"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/standard_margin"
-                android:orientation="horizontal">
+                android:inputType="numberDecimal"
+                android:text="@={`` + shoe.size}"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvSize"
+                app:layout_constraintTop_toTopOf="@+id/tvSize" />
 
-                <TextView
-                    style="@style/styleTv"
-                    android:text="Size:" />
 
-                <EditText
-                    android:id="@+id/etSize"
-                    style="@style/styleEt"
-                    android:inputType="numberDecimal"
-                    android:text="@={`` + shoe.size}"/>
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tvCompany"
+                style="@style/styleTv"
+                android:layout_width="0dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="20dp"
+                android:text="Company"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc"
+                app:layout_constraintEnd_toStartOf="@+id/etCompany"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSize" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/etCompany"
+                style="@style/styleEt"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/standard_margin"
-                android:orientation="horizontal">
+                android:text="@={shoe.company}"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvCompany"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvCompany"
+                app:layout_constraintTop_toTopOf="@+id/tvCompany" />
 
-                <TextView
-                    style="@style/styleTv"
-                    android:text="Company" />
 
-                <EditText
-                    android:id="@+id/etCompany"
-                    style="@style/styleEt"
-                    android:text="@={shoe.company}"/>
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tvDesc"
+                style="@style/styleTv"
+                android:layout_width="0dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="20dp"
+                android:text="Descriptions"
+                app:layout_constraintBottom_toTopOf="@+id/btnSave"
+                app:layout_constraintEnd_toStartOf="@+id/etDesc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCompany" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/etDesc"
+                style="@style/styleEt"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/standard_margin"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/styleTv"
-                    android:text="Descriptions" />
-
-                <EditText
-                    android:id="@+id/etDesc"
-                    style="@style/styleEt"
-                    android:text="@={shoe.description}"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/standard_margin"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btnSave"
-                    style="@style/styleBtn"
-                    android:text="Save" />
-
-                <Button
-                    android:id="@+id/btnCancel"
-                    style="@style/styleBtn"
-                    android:text="Cancel" />
-            </LinearLayout>
+                android:text="@={shoe.description}"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvDesc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvDesc"
+                app:layout_constraintTop_toTopOf="@+id/tvDesc" />
 
 
-        </LinearLayout>
+            <Button
+                android:id="@+id/btnSave"
+                style="@style/styleBtn"
+                android:layout_width="0dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnCancel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDesc" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                style="@style/styleBtn"
+                android:layout_width="0dp"
+                android:layout_marginTop="20dp"
+                android:text="Cancel"
+                app:layout_constraintBaseline_toBaselineOf="@+id/btnSave"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnSave" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>

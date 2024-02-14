@@ -6,8 +6,7 @@
     <androidx.cardview.widget.CardView
         style="@style/cv_style"
         app:cardCornerRadius="@dimen/cv_corner_radius">
-
-
+        <!-- Layout is very simple and flat and therefore justifies the use of LinearLayout -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

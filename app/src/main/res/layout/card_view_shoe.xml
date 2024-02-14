@@ -4,79 +4,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/cv_style"
     app:cardCornerRadius="@dimen/cv_corner_radius"
+    android:layout_margin="@dimen/cv_margin"
     android:theme="@style/Theme.MaterialComponents.Bridge"
     tools:showIn="@layout/fragment_shoe_listing_screen">
-
-    <LinearLayout
+    <!-- LinearLayout would have been nested, therefore a ConstraintLayout was chosen to increase performance -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/cv_padding">
+        app:layout_constraintEnd_toStartOf="@+id/tvShoeName"
+        app:layout_constraintStart_toStartOf="@+id/tvShoeName">
 
         <TextView
             android:id="@+id/tvShoeName"
             style="@style/cardViewTv"
+            android:paddingTop="@dimen/cv_padding_top"
+            android:paddingStart="@dimen/cv_padding_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textStyle="bold"
-            tools:text="shoe name" />
+            tools:text="shoe name"
+            app:layout_constraintBottom_toTopOf="@+id/tvShoeSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/tvShoeSize"
             style="@style/cardViewTv"
-            tools:text="shoe size" />
+            android:paddingTop="@dimen/cv_padding_top"
+            android:paddingStart="@dimen/cv_padding_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_conversion_absoluteHeight="0dp"
+            tools:layout_conversion_absoluteWidth="0dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            tools:text="shoe size"
+            app:layout_constraintBottom_toTopOf="@+id/tvShoeCompany"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvShoeName"/>
 
         <TextView
             android:id="@+id/tvShoeCompany"
             style="@style/cardViewTv"
-            tools:text="shoe company" />
+            android:paddingTop="@dimen/cv_padding_top"
+            android:paddingStart="@dimen/cv_padding_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="shoe company"
+            app:layout_constraintBottom_toTopOf="@id/tvShoeDesc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvShoeSize"/>
 
         <TextView
             android:id="@+id/tvShoeDesc"
             style="@style/cardViewTv"
-
-            tools:text="shoe descriptions" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginVertical="@dimen/cv_margin">
-            <com.google.android.material.button.MaterialButton
-                android:layout_gravity="center_vertical"
-                app:backgroundTint="@color/ligthGray"
-                android:id="@+id/btnPrev"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:background="@drawable/baseline_navigate_before_24"
-                android:layout_marginRight="10dp"
-                />
-            <ImageView
-                android:clipToOutline="true"
-                android:layout_marginTop="30dp"
-                android:id="@+id/ivShoe"
-                android:layout_width="0dp"
-                android:layout_weight="6"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"/>
-            <com.google.android.material.button.MaterialButton
-                android:layout_gravity="center_vertical"
-                app:backgroundTint="@color/ligthGray"
-                android:id="@+id/btnNext"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:background="@drawable/baseline_navigate_next_24"
-                android:layout_marginLeft="10dp"
-                />
-        </LinearLayout>
-        <com.google.android.material.button.MaterialButton
+            android:paddingVertical="@dimen/cv_padding_top"
+            android:paddingStart="@dimen/cv_padding_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|bottom"
+            app:layout_constraintBottom_toTopOf="@+id/ivShoe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvShoeCompany"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPrev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/baseline_navigate_before_24"
+            app:backgroundTint="@color/ligthGray"
+            android:layout_marginStart="30dp"
+            app:layout_constraintBottom_toTopOf="@id/btnDeleteShoe"
+            app:layout_constraintEnd_toStartOf="@id/ivShoe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvShoeDesc"/>
+
+        <ImageView
+            android:id="@+id/ivShoe"
+            android:layout_marginTop="@dimen/cv_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:clipToOutline="true"
+            android:maxWidth="200dp"
+            app:layout_constraintBottom_toTopOf="@id/btnDeleteShoe"
+            app:layout_constraintEnd_toStartOf="@+id/btnNext"
+            app:layout_constraintStart_toEndOf="@id/btnPrev"
+            app:layout_constraintTop_toBottomOf="@+id/tvShoeDesc"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/baseline_navigate_next_24"
+            app:backgroundTint="@color/ligthGray"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintBottom_toTopOf="@id/btnDeleteShoe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivShoe"
+            app:layout_constraintTop_toBottomOf="@+id/tvShoeDesc"/>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDeleteShoe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:backgroundTint="@color/errorColor"
             android:text="@string/delete_shoe"
-            />
-    </LinearLayout>
+            android:layout_marginVertical="@dimen/btn_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivShoe"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

@@ -4,6 +4,8 @@
     <dimen name="standard_padding">20dp</dimen>
     <dimen name="cv_margin">20dp</dimen>
     <dimen name="cv_padding">20dp</dimen>
+    <dimen name="cv_padding_top">1dp</dimen>
+    <dimen name="cv_padding_start">20dp</dimen>
     <dimen name="cv_corner_radius">10dp</dimen>
     <dimen name="btn_margin">20dp</dimen>
     <dimen name="textSizeLabel">16sp</dimen>
