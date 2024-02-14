@@ -1,7 +1,5 @@
 package com.udacity.shoestore.screens.shoedetail
 
-import android.app.Activity
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -50,7 +48,7 @@ class ShoeDetailScreen : Fragment() {
             binding.etCompany.setText("")
             binding.etDesc.setText("")
             binding.etSize.setText("")
-            findNavController().navigate(R.id.action_shoeDetailScreen_to_shoeListingScreen)
+            findNavController().navigateUp()
         }
     }
 
